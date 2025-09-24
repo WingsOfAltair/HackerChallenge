@@ -76,7 +76,7 @@ function checkBrowser(){
 		browserSupport=true;
 	}
 	
-	if(browserSupport){
+	if(browserSupport && checkGameVersion()){
 		if(!isLoaded){
 			isLoaded=true;
 			initPreload();

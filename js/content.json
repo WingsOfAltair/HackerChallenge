@@ -1,0 +1,3273 @@
+[
+  {
+    "stage": {
+      "w": 1280,
+      "h": 768,
+      "x": 0,
+      "y": 0
+    },
+    "hub": [
+      {
+        "x": 270,
+        "y": 390,
+        "type": 0,
+        "lock": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1020,
+        "y": 390,
+        "type": 1,
+        "lock": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 600,
+        "y": 600,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 90
+      },
+      {
+        "x": 600,
+        "y": 180,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 600,
+        "y": 390,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 180
+      }
+    ],
+    "lines": [
+      {
+        "startHub": 0,
+        "startHubPos": 2,
+        "endHub": 2,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 270,
+            "y": 600
+          }
+        ]
+      },
+      {
+        "startHub": 0,
+        "startHubPos": 0,
+        "endHub": 3,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 270,
+            "y": 180
+          }
+        ]
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 2,
+        "endHub": 4,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 2,
+        "startHubPos": 0,
+        "endHub": 4,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 4,
+        "startHubPos": 1,
+        "endHub": 1,
+        "endHubPos": 3,
+        "array": []
+      }
+    ]
+  },
+  {
+    "stage": {
+      "w": 1280,
+      "h": 768,
+      "x": 0,
+      "y": 0
+    },
+    "hub": [
+      {
+        "x": 630,
+        "y": 180,
+        "type": 0,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 630,
+        "y": 600,
+        "type": 1,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 240,
+        "y": 330,
+        "type": 2,
+        "lock": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "timer": 30000,
+        "trick": 0,
+        "rotation": 90
+      },
+      {
+        "x": 1050,
+        "y": 330,
+        "type": 2,
+        "lock": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 90
+      },
+      {
+        "x": 630,
+        "y": 420,
+        "type": 5,
+        "lock": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": 270
+      },
+      {
+        "x": 390,
+        "y": 600,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 180
+      },
+      {
+        "x": 870,
+        "y": 600,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 90
+      }
+    ],
+    "lines": [
+      {
+        "startHub": 0,
+        "startHubPos": 3,
+        "endHub": 2,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 240,
+            "y": 180
+          }
+        ]
+      },
+      {
+        "startHub": 0,
+        "startHubPos": 1,
+        "endHub": 3,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 1050,
+            "y": 180
+          }
+        ]
+      },
+      {
+        "startHub": 4,
+        "startHubPos": 2,
+        "endHub": 1,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 0,
+        "startHubPos": 2,
+        "endHub": 4,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 2,
+        "startHubPos": 2,
+        "endHub": 5,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 240,
+            "y": 480
+          },
+          {
+            "x": 390,
+            "y": 480
+          }
+        ]
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 2,
+        "endHub": 6,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 1050,
+            "y": 480
+          },
+          {
+            "x": 870,
+            "y": 480
+          }
+        ]
+      },
+      {
+        "startHub": 5,
+        "startHubPos": 1,
+        "endHub": 4,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 510,
+            "y": 600
+          },
+          {
+            "x": 510,
+            "y": 420
+          }
+        ]
+      },
+      {
+        "startHub": 4,
+        "startHubPos": 1,
+        "endHub": 6,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 750,
+            "y": 420
+          },
+          {
+            "x": 750,
+            "y": 600
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "stage": {
+      "w": 2500,
+      "h": 768,
+      "x": -1220,
+      "y": 0
+    },
+    "hub": [
+      {
+        "x": 390,
+        "y": 270,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 900,
+        "y": 270,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1350,
+        "y": 330,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 660,
+        "y": 540,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 2250,
+        "y": 390,
+        "type": 1,
+        "lock": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 2070,
+        "y": 390,
+        "type": 0,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1260,
+        "y": 480,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 1710,
+        "y": 240,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 1470,
+        "y": 540,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1830,
+        "y": 462,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 270,
+        "y": 510,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 180
+      }
+    ],
+    "lines": [
+      {
+        "startHub": 0,
+        "startHubPos": 1,
+        "endHub": 1,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 0,
+        "startHubPos": 2,
+        "endHub": 2,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 390,
+            "y": 420
+          },
+          {
+            "x": 1080,
+            "y": 420
+          },
+          {
+            "x": 1080,
+            "y": 330
+          }
+        ]
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 0,
+        "endHub": 1,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 660,
+            "y": 360
+          },
+          {
+            "x": 900,
+            "y": 360
+          }
+        ]
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 1,
+        "endHub": 6,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 1020,
+            "y": 540
+          },
+          {
+            "x": 1020,
+            "y": 480
+          }
+        ]
+      },
+      {
+        "startHub": 2,
+        "startHubPos": 1,
+        "endHub": 5,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 1560,
+            "y": 330
+          },
+          {
+            "x": 1560,
+            "y": 390
+          }
+        ]
+      },
+      {
+        "startHub": 8,
+        "startHubPos": 1,
+        "endHub": 4,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 2250,
+            "y": 540
+          }
+        ]
+      },
+      {
+        "startHub": 8,
+        "startHubPos": 0,
+        "endHub": 9,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 1470,
+            "y": 150
+          },
+          {
+            "x": 1830,
+            "y": 150
+          }
+        ]
+      },
+      {
+        "startHub": 10,
+        "startHubPos": 2,
+        "endHub": 9,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 270,
+            "y": 630
+          },
+          {
+            "x": 1830,
+            "y": 630
+          }
+        ]
+      },
+      {
+        "startHub": 6,
+        "startHubPos": 1,
+        "endHub": 7,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 1710,
+            "y": 480
+          }
+        ]
+      },
+      {
+        "startHub": 10,
+        "startHubPos": 1,
+        "endHub": 7,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 540,
+            "y": 510
+          },
+          {
+            "x": 540,
+            "y": 180
+          },
+          {
+            "x": 1200,
+            "y": 180
+          },
+          {
+            "x": 1200,
+            "y": 240
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "stage": {
+      "w": 1600,
+      "h": 1400,
+      "x": -196,
+      "y": -387
+    },
+    "hub": [
+      {
+        "x": 630,
+        "y": 420,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 930,
+        "y": 420,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 780,
+        "y": 630,
+        "type": 4,
+        "lock": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 390,
+        "y": 570,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 390,
+        "y": 210,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1170,
+        "y": 570,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1170,
+        "y": 210,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 780,
+        "y": 810,
+        "type": 0,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 780,
+        "y": 210,
+        "type": 1,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 390,
+        "y": 960,
+        "type": 3,
+        "lock": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": 270
+      },
+      {
+        "x": 780,
+        "y": 1080,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 180
+      },
+      {
+        "x": 1260,
+        "y": 840,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1050,
+        "y": 960,
+        "type": 5,
+        "lock": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 1050,
+        "y": 690,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 20000,
+        "trick": 2,
+        "rotation": 0
+      }
+    ],
+    "lines": [
+      {
+        "startHub": 0,
+        "startHubPos": 1,
+        "endHub": 1,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 0,
+        "startHubPos": 2,
+        "endHub": 2,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 630,
+            "y": 570
+          }
+        ]
+      },
+      {
+        "startHub": 1,
+        "startHubPos": 2,
+        "endHub": 2,
+        "endHubPos": 1,
+        "array": [
+          {
+            "x": 930,
+            "y": 570
+          }
+        ]
+      },
+      {
+        "startHub": 0,
+        "startHubPos": 0,
+        "endHub": 4,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 630,
+            "y": 330
+          },
+          {
+            "x": 390,
+            "y": 330
+          }
+        ]
+      },
+      {
+        "startHub": 0,
+        "startHubPos": 3,
+        "endHub": 3,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 390,
+            "y": 420
+          }
+        ]
+      },
+      {
+        "startHub": 4,
+        "startHubPos": 3,
+        "endHub": 3,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 270,
+            "y": 210
+          },
+          {
+            "x": 270,
+            "y": 570
+          }
+        ]
+      },
+      {
+        "startHub": 1,
+        "startHubPos": 0,
+        "endHub": 6,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 930,
+            "y": 330
+          },
+          {
+            "x": 1170,
+            "y": 330
+          }
+        ]
+      },
+      {
+        "startHub": 1,
+        "startHubPos": 1,
+        "endHub": 5,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 1170,
+            "y": 420
+          }
+        ]
+      },
+      {
+        "startHub": 6,
+        "startHubPos": 1,
+        "endHub": 5,
+        "endHubPos": 1,
+        "array": [
+          {
+            "x": 1290,
+            "y": 210
+          },
+          {
+            "x": 1290,
+            "y": 570
+          }
+        ]
+      },
+      {
+        "startHub": 2,
+        "startHubPos": 0,
+        "endHub": 8,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 2,
+        "startHubPos": 2,
+        "endHub": 7,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 7,
+        "startHubPos": 2,
+        "endHub": 10,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 9,
+        "startHubPos": 2,
+        "endHub": 10,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 390,
+            "y": 1080
+          }
+        ]
+      },
+      {
+        "startHub": 10,
+        "startHubPos": 1,
+        "endHub": 11,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 1260,
+            "y": 1080
+          }
+        ]
+      },
+      {
+        "startHub": 4,
+        "startHubPos": 1,
+        "endHub": 13,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 510,
+            "y": 210
+          },
+          {
+            "x": 510,
+            "y": 690
+          }
+        ]
+      },
+      {
+        "startHub": 13,
+        "startHubPos": 0,
+        "endHub": 6,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 1050,
+            "y": 210
+          }
+        ]
+      },
+      {
+        "startHub": 7,
+        "startHubPos": 3,
+        "endHub": 9,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 390,
+            "y": 810
+          }
+        ]
+      },
+      {
+        "startHub": 9,
+        "startHubPos": 1,
+        "endHub": 12,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 11,
+        "startHubPos": 3,
+        "endHub": 12,
+        "endHubPos": 1,
+        "array": [
+          {
+            "x": 1170,
+            "y": 840
+          },
+          {
+            "x": 1170,
+            "y": 960
+          }
+        ]
+      },
+      {
+        "startHub": 12,
+        "startHubPos": 0,
+        "endHub": 13,
+        "endHubPos": 2,
+        "array": []
+      }
+    ]
+  },
+  {
+    "stage": {
+      "w": 1280,
+      "h": 2200,
+      "x": 0,
+      "y": -669
+    },
+    "hub": [
+      {
+        "x": 630,
+        "y": 480,
+        "type": 0,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 300,
+        "y": 480,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 270
+      },
+      {
+        "x": 630,
+        "y": 330,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 450,
+        "y": 480,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 630,
+        "y": 180,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 180
+      },
+      {
+        "x": 300,
+        "y": 180,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 630,
+        "y": 810,
+        "type": 4,
+        "lock": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 810,
+        "y": 480,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 180
+      },
+      {
+        "x": 960,
+        "y": 480,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 630,
+        "y": 660,
+        "type": 2,
+        "lock": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 300,
+        "y": 810,
+        "type": 3,
+        "lock": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 630,
+        "y": 1020,
+        "type": 1,
+        "lock": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 630,
+        "y": 1260,
+        "type": 4,
+        "lock": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 630,
+        "y": 1410,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 630,
+        "y": 1560,
+        "type": 0,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 630,
+        "y": 1740,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 630,
+        "y": 1860,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 450,
+        "y": 1560,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 300,
+        "y": 1560,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 810,
+        "y": 1560,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": 90
+      },
+      {
+        "x": 960,
+        "y": 1560,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 270
+      }
+    ],
+    "lines": [
+      {
+        "startHub": 2,
+        "startHubPos": 2,
+        "endHub": 0,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 2,
+        "startHubPos": 3,
+        "endHub": 3,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 450,
+            "y": 330
+          }
+        ]
+      },
+      {
+        "startHub": 9,
+        "startHubPos": 1,
+        "endHub": 7,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 810,
+            "y": 660
+          }
+        ]
+      },
+      {
+        "startHub": 2,
+        "startHubPos": 0,
+        "endHub": 4,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 3,
+        "endHub": 1,
+        "endHubPos": 1,
+        "array": []
+      },
+      {
+        "startHub": 1,
+        "startHubPos": 0,
+        "endHub": 5,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 5,
+        "startHubPos": 1,
+        "endHub": 4,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 4,
+        "startHubPos": 1,
+        "endHub": 7,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 960,
+            "y": 180
+          },
+          {
+            "x": 960,
+            "y": 330
+          },
+          {
+            "x": 810,
+            "y": 330
+          }
+        ]
+      },
+      {
+        "startHub": 7,
+        "startHubPos": 1,
+        "endHub": 8,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 6,
+        "startHubPos": 1,
+        "endHub": 8,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 960,
+            "y": 810
+          }
+        ]
+      },
+      {
+        "startHub": 10,
+        "startHubPos": 1,
+        "endHub": 6,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 9,
+        "startHubPos": 2,
+        "endHub": 6,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 1,
+        "startHubPos": 2,
+        "endHub": 10,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 2,
+        "endHub": 9,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 450,
+            "y": 660
+          }
+        ]
+      },
+      {
+        "startHub": 6,
+        "startHubPos": 2,
+        "endHub": 11,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 14,
+        "startHubPos": 2,
+        "endHub": 15,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 15,
+        "startHubPos": 1,
+        "endHub": 19,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 810,
+            "y": 1740
+          }
+        ]
+      },
+      {
+        "startHub": 19,
+        "startHubPos": 0,
+        "endHub": 13,
+        "endHubPos": 1,
+        "array": [
+          {
+            "x": 810,
+            "y": 1410
+          }
+        ]
+      },
+      {
+        "startHub": 13,
+        "startHubPos": 0,
+        "endHub": 12,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 12,
+        "startHubPos": 1,
+        "endHub": 20,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 960,
+            "y": 1260
+          }
+        ]
+      },
+      {
+        "startHub": 17,
+        "startHubPos": 2,
+        "endHub": 15,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 450,
+            "y": 1740
+          }
+        ]
+      },
+      {
+        "startHub": 12,
+        "startHubPos": 0,
+        "endHub": 11,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 17,
+        "startHubPos": 3,
+        "endHub": 18,
+        "endHubPos": 1,
+        "array": []
+      },
+      {
+        "startHub": 18,
+        "startHubPos": 2,
+        "endHub": 16,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 300,
+            "y": 1860
+          }
+        ]
+      },
+      {
+        "startHub": 16,
+        "startHubPos": 1,
+        "endHub": 20,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 960,
+            "y": 1860
+          }
+        ]
+      },
+      {
+        "startHub": 17,
+        "startHubPos": 0,
+        "endHub": 12,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 450,
+            "y": 1410
+          },
+          {
+            "x": 299,
+            "y": 1409
+          },
+          {
+            "x": 300,
+            "y": 1260
+          }
+        ]
+      },
+      {
+        "startHub": 19,
+        "startHubPos": 1,
+        "endHub": 20,
+        "endHubPos": 3,
+        "array": []
+      }
+    ]
+  },
+  {
+    "stage": {
+      "w": 2000,
+      "h": 1500,
+      "x": 0,
+      "y": 0
+    },
+    "hub": [
+      {
+        "x": 990,
+        "y": 1260,
+        "type": 0,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 990,
+        "y": 930,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 30000,
+        "trick": 2,
+        "rotation": -1
+      },
+      {
+        "x": 1620,
+        "y": 930,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 390,
+        "y": 930,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1260,
+        "y": 660,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1470,
+        "y": 360,
+        "type": 2,
+        "lock": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": 90
+      },
+      {
+        "x": 1080,
+        "y": 210,
+        "type": 3,
+        "lock": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 510,
+        "y": 390,
+        "type": 1,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 720,
+        "y": 660,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 720,
+        "y": 390,
+        "type": 3,
+        "lock": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": 90
+      }
+    ],
+    "lines": [
+      {
+        "startHub": 0,
+        "startHubPos": 0,
+        "endHub": 1,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 1,
+        "endHub": 1,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 1,
+        "startHubPos": 1,
+        "endHub": 2,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 4,
+        "startHubPos": 1,
+        "endHub": 5,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 1470,
+            "y": 660
+          }
+        ]
+      },
+      {
+        "startHub": 5,
+        "startHubPos": 1,
+        "endHub": 2,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 1620,
+            "y": 360
+          }
+        ]
+      },
+      {
+        "startHub": 4,
+        "startHubPos": 2,
+        "endHub": 2,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 1260,
+            "y": 1140
+          },
+          {
+            "x": 1620,
+            "y": 1140
+          }
+        ]
+      },
+      {
+        "startHub": 6,
+        "startHubPos": 1,
+        "endHub": 5,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 1470,
+            "y": 210
+          }
+        ]
+      },
+      {
+        "startHub": 6,
+        "startHubPos": 2,
+        "endHub": 4,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 1080,
+            "y": 420
+          },
+          {
+            "x": 1260,
+            "y": 420
+          }
+        ]
+      },
+      {
+        "startHub": 8,
+        "startHubPos": 1,
+        "endHub": 4,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 0,
+        "endHub": 8,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 390,
+            "y": 660
+          }
+        ]
+      },
+      {
+        "startHub": 8,
+        "startHubPos": 0,
+        "endHub": 9,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 9,
+        "startHubPos": 0,
+        "endHub": 6,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 720,
+            "y": 210
+          }
+        ]
+      },
+      {
+        "startHub": 7,
+        "startHubPos": 1,
+        "endHub": 9,
+        "endHubPos": 3,
+        "array": []
+      }
+    ]
+  },
+  {
+    "stage": {
+      "w": 2500,
+      "h": 1800,
+      "x": -619,
+      "y": -92
+    },
+    "hub": [
+      {
+        "x": 570,
+        "y": 330,
+        "type": 0,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 570,
+        "y": 570,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 270
+      },
+      {
+        "x": 960,
+        "y": 900,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 40000,
+        "trick": 2,
+        "rotation": 0
+      },
+      {
+        "x": 1110,
+        "y": 630,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 1470,
+        "y": 630,
+        "type": 3,
+        "lock": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 1290,
+        "y": 840,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 1290,
+        "y": 360,
+        "type": 1,
+        "lock": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 1110,
+        "y": 360,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 60000,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 1470,
+        "y": 360,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 65000,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 1290,
+        "y": 1410,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1620,
+        "y": 900,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 40000,
+        "trick": 2,
+        "rotation": 180
+      },
+      {
+        "x": 1920,
+        "y": 570,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 270
+      },
+      {
+        "x": 1920,
+        "y": 360,
+        "type": 0,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      }
+    ],
+    "lines": [
+      {
+        "startHub": 0,
+        "startHubPos": 3,
+        "endHub": 1,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 360,
+            "y": 330
+          },
+          {
+            "x": 360,
+            "y": 570
+          }
+        ]
+      },
+      {
+        "startHub": 0,
+        "startHubPos": 1,
+        "endHub": 1,
+        "endHubPos": 1,
+        "array": [
+          {
+            "x": 780,
+            "y": 330
+          },
+          {
+            "x": 780,
+            "y": 570
+          }
+        ]
+      },
+      {
+        "startHub": 1,
+        "startHubPos": 2,
+        "endHub": 2,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 570,
+            "y": 900
+          }
+        ]
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 1,
+        "endHub": 4,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 2,
+        "startHubPos": 0,
+        "endHub": 3,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 960,
+            "y": 630
+          }
+        ]
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 2,
+        "endHub": 5,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 1110,
+            "y": 840
+          }
+        ]
+      },
+      {
+        "startHub": 5,
+        "startHubPos": 1,
+        "endHub": 4,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 1470,
+            "y": 840
+          }
+        ]
+      },
+      {
+        "startHub": 7,
+        "startHubPos": 1,
+        "endHub": 6,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 6,
+        "startHubPos": 1,
+        "endHub": 8,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 7,
+        "startHubPos": 3,
+        "endHub": 3,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 990,
+            "y": 360
+          },
+          {
+            "x": 990,
+            "y": 510
+          },
+          {
+            "x": 1110,
+            "y": 510
+          }
+        ]
+      },
+      {
+        "startHub": 4,
+        "startHubPos": 0,
+        "endHub": 8,
+        "endHubPos": 1,
+        "array": [
+          {
+            "x": 1470,
+            "y": 510
+          },
+          {
+            "x": 1590,
+            "y": 510
+          },
+          {
+            "x": 1590,
+            "y": 360
+          }
+        ]
+      },
+      {
+        "startHub": 9,
+        "startHubPos": 0,
+        "endHub": 5,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 2,
+        "startHubPos": 2,
+        "endHub": 9,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 960,
+            "y": 1410
+          }
+        ]
+      },
+      {
+        "startHub": 4,
+        "startHubPos": 1,
+        "endHub": 10,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 1620,
+            "y": 630
+          }
+        ]
+      },
+      {
+        "startHub": 9,
+        "startHubPos": 1,
+        "endHub": 10,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 1620,
+            "y": 1410
+          }
+        ]
+      },
+      {
+        "startHub": 10,
+        "startHubPos": 1,
+        "endHub": 11,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 1920,
+            "y": 900
+          }
+        ]
+      },
+      {
+        "startHub": 12,
+        "startHubPos": 3,
+        "endHub": 11,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 1740,
+            "y": 360
+          },
+          {
+            "x": 1740,
+            "y": 570
+          }
+        ]
+      },
+      {
+        "startHub": 12,
+        "startHubPos": 1,
+        "endHub": 11,
+        "endHubPos": 1,
+        "array": [
+          {
+            "x": 2100,
+            "y": 360
+          },
+          {
+            "x": 2100,
+            "y": 570
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "stage": {
+      "w": 3000,
+      "h": 2200,
+      "x": -768,
+      "y": -162
+    },
+    "hub": [
+      {
+        "x": 420,
+        "y": 570,
+        "type": 0,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 630,
+        "y": 390,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 180
+      },
+      {
+        "x": 630,
+        "y": 750,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 960,
+        "y": 570,
+        "type": 4,
+        "lock": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 690,
+        "y": 570,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 960,
+        "y": 390,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 90
+      },
+      {
+        "x": 960,
+        "y": 750,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 960,
+        "y": 180,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 90
+      },
+      {
+        "x": 960,
+        "y": 990,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1470,
+        "y": 570,
+        "type": 1,
+        "lock": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 1230,
+        "y": 570,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": 90
+      },
+      {
+        "x": 1470,
+        "y": 780,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": 180
+      },
+      {
+        "x": 1710,
+        "y": 570,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": 0
+      },
+      {
+        "x": 1980,
+        "y": 570,
+        "type": 4,
+        "lock": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 1980,
+        "y": 780,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 90
+      },
+      {
+        "x": 1980,
+        "y": 390,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1980,
+        "y": 180,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 2220,
+        "y": 570,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 2340,
+        "y": 390,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 2370,
+        "y": 780,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 2610,
+        "y": 570,
+        "type": 0,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1980,
+        "y": 990,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 180
+      },
+      {
+        "x": 1470,
+        "y": 1260,
+        "type": 4,
+        "lock": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "timer": 0,
+        "trick": 1,
+        "rotation": -1
+      },
+      {
+        "x": 1470,
+        "y": 990,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 25000,
+        "trick": 2,
+        "rotation": 90
+      },
+      {
+        "x": 1200,
+        "y": 1260,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1740,
+        "y": 1260,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 60000,
+        "trick": 0,
+        "rotation": 90
+      },
+      {
+        "x": 1200,
+        "y": 1590,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1740,
+        "y": 1590,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 1470,
+        "y": 1500,
+        "type": 2,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 90
+      },
+      {
+        "x": 1470,
+        "y": 1800,
+        "type": 0,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": -1
+      },
+      {
+        "x": 900,
+        "y": 1260,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 270
+      },
+      {
+        "x": 2070,
+        "y": 1260,
+        "type": 3,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 0
+      },
+      {
+        "x": 1470,
+        "y": 330,
+        "type": 5,
+        "lock": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "timer": 0,
+        "trick": 0,
+        "rotation": 270
+      }
+    ],
+    "lines": [
+      {
+        "startHub": 0,
+        "startHubPos": 0,
+        "endHub": 1,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 420,
+            "y": 390
+          }
+        ]
+      },
+      {
+        "startHub": 0,
+        "startHubPos": 1,
+        "endHub": 4,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 4,
+        "startHubPos": 1,
+        "endHub": 3,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 0,
+        "startHubPos": 2,
+        "endHub": 2,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 420,
+            "y": 750
+          }
+        ]
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 0,
+        "endHub": 5,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 2,
+        "endHub": 6,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 1,
+        "startHubPos": 1,
+        "endHub": 5,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 7,
+        "startHubPos": 2,
+        "endHub": 5,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 7,
+        "startHubPos": 3,
+        "endHub": 1,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 630,
+            "y": 180
+          }
+        ]
+      },
+      {
+        "startHub": 2,
+        "startHubPos": 1,
+        "endHub": 6,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 6,
+        "startHubPos": 2,
+        "endHub": 8,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 2,
+        "startHubPos": 2,
+        "endHub": 8,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 630,
+            "y": 990
+          }
+        ]
+      },
+      {
+        "startHub": 10,
+        "startHubPos": 1,
+        "endHub": 9,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 9,
+        "startHubPos": 1,
+        "endHub": 12,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 10,
+        "startHubPos": 2,
+        "endHub": 11,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 1230,
+            "y": 780
+          }
+        ]
+      },
+      {
+        "startHub": 3,
+        "startHubPos": 1,
+        "endHub": 10,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 11,
+        "startHubPos": 1,
+        "endHub": 12,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 1710,
+            "y": 780
+          }
+        ]
+      },
+      {
+        "startHub": 9,
+        "startHubPos": 2,
+        "endHub": 11,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 12,
+        "startHubPos": 1,
+        "endHub": 13,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 13,
+        "startHubPos": 0,
+        "endHub": 15,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 14,
+        "startHubPos": 0,
+        "endHub": 13,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 14,
+        "startHubPos": 1,
+        "endHub": 19,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 16,
+        "startHubPos": 2,
+        "endHub": 15,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 17,
+        "startHubPos": 3,
+        "endHub": 13,
+        "endHubPos": 1,
+        "array": []
+      },
+      {
+        "startHub": 15,
+        "startHubPos": 1,
+        "endHub": 18,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 16,
+        "startHubPos": 1,
+        "endHub": 18,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 2340,
+            "y": 180
+          }
+        ]
+      },
+      {
+        "startHub": 17,
+        "startHubPos": 1,
+        "endHub": 20,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 18,
+        "startHubPos": 1,
+        "endHub": 20,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 2610,
+            "y": 390
+          }
+        ]
+      },
+      {
+        "startHub": 19,
+        "startHubPos": 1,
+        "endHub": 20,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 2610,
+            "y": 780
+          }
+        ]
+      },
+      {
+        "startHub": 14,
+        "startHubPos": 2,
+        "endHub": 21,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 21,
+        "startHubPos": 1,
+        "endHub": 19,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 2370,
+            "y": 990
+          }
+        ]
+      },
+      {
+        "startHub": 11,
+        "startHubPos": 2,
+        "endHub": 23,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 23,
+        "startHubPos": 2,
+        "endHub": 22,
+        "endHubPos": 0,
+        "array": []
+      },
+      {
+        "startHub": 24,
+        "startHubPos": 1,
+        "endHub": 22,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 22,
+        "startHubPos": 1,
+        "endHub": 25,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 26,
+        "startHubPos": 0,
+        "endHub": 24,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 29,
+        "startHubPos": 0,
+        "endHub": 28,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 28,
+        "startHubPos": 0,
+        "endHub": 22,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 27,
+        "startHubPos": 0,
+        "endHub": 25,
+        "endHubPos": 2,
+        "array": []
+      },
+      {
+        "startHub": 26,
+        "startHubPos": 2,
+        "endHub": 29,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 1200,
+            "y": 1800
+          }
+        ]
+      },
+      {
+        "startHub": 29,
+        "startHubPos": 1,
+        "endHub": 27,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 1740,
+            "y": 1800
+          }
+        ]
+      },
+      {
+        "startHub": 30,
+        "startHubPos": 1,
+        "endHub": 24,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 30,
+        "startHubPos": 2,
+        "endHub": 26,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 900,
+            "y": 1590
+          }
+        ]
+      },
+      {
+        "startHub": 25,
+        "startHubPos": 1,
+        "endHub": 31,
+        "endHubPos": 3,
+        "array": []
+      },
+      {
+        "startHub": 27,
+        "startHubPos": 1,
+        "endHub": 31,
+        "endHubPos": 2,
+        "array": [
+          {
+            "x": 2070,
+            "y": 1590
+          }
+        ]
+      },
+      {
+        "startHub": 10,
+        "startHubPos": 0,
+        "endHub": 32,
+        "endHubPos": 3,
+        "array": [
+          {
+            "x": 1230,
+            "y": 330
+          }
+        ]
+      },
+      {
+        "startHub": 32,
+        "startHubPos": 1,
+        "endHub": 12,
+        "endHubPos": 0,
+        "array": [
+          {
+            "x": 1710,
+            "y": 330
+          }
+        ]
+      },
+      {
+        "startHub": 32,
+        "startHubPos": 2,
+        "endHub": 9,
+        "endHubPos": 0,
+        "array": []
+      }
+    ]
+  }
+]

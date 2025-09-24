@@ -18,6 +18,7 @@
 	
 	loader = new createjs.LoadQueue(false);
 	manifest=[
+			{src:"js/content.json", id: "contentData", type: createjs.Types.JSON},
 			{src:'assets/background.png', id:'background'},
 			{src:'assets/logo.png', id:'logo'},
 			{src:'assets/button_start.png', id:'buttonStart'},

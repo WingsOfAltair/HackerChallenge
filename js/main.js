@@ -16,6 +16,7 @@ function initMain(){
 		$('#canvasHolder').show();	
 	}
 	
+	contentData = loader.getResult("contentData");
 	initGameCanvas(stageW,stageH);
 	buildGameCanvas();
 	buildGameButton();

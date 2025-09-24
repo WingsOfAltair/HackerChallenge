@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////
-// GAME v2.0
+// GAME v2.2
 ////////////////////////////////////////////////////////////
 
 /*!
@@ -12,7 +12,7 @@ const gameStageColour = '#fff'; //stage display colour
 const gameOverText = 'ACCESS DENIED';  //game access denied
 const gameOverColour = '#D90000'; //game access denied colour
 
-const strokeLine = 3; //stroke line
+const strokeLine = 5; //stroke line
 const strokeColour = '#D90000'; //stroke colour
 const strokePowerColour = '#7cc5ed'; //stroke power colour
 
@@ -51,10 +51,12 @@ const shareSettings = {
  */
 
 $.editor = {enable:false};
+var contentData = [];
 const dotW = 5;
 const dotColour = '#ffffff';
 const gameData = {stageNum:0, displayStageNum:0, pause:true, soundtimer_arr:[], soundtimercount:0};
-
+const build_id = 0xA9C94;
+const cerify_key = 'AZRbAcwKAJG6mesb_XRSlxpfGL8';
 
 /*!
  * 
@@ -237,8 +239,8 @@ function updateStageMove(){
  * 
  */
 function checkWithinArea(obj){
-	var startX = stageW-stage_arr[gameData.stageNum].stage.w;
-	var startY = stageH-stage_arr[gameData.stageNum].stage.h;
+	var startX = stageW-contentData[gameData.stageNum].stage.w;
+	var startY = stageH-contentData[gameData.stageNum].stage.h;
 	var endX = 0;
 	var endY = 0;
 	
@@ -400,10 +402,10 @@ function endGame(){
 	TweenMax.to(stageAnnounceContainer, 3, {overwrite:true, onComplete:function(){
 		gameData.stageNum++;
 		gameData.displayStageNum++;
-		if(gameData.stageNum < stage_arr.length){
+		if(gameData.stageNum < contentData.length){
 			prepareStage();
 		}else{
-			gameData.stageNum = stage_arr.length -1;
+			gameData.stageNum = contentData.length -1;
 			gameData.displayStageNum = gameData.stageNum;
 			goPage('result');	
 		}
@@ -422,8 +424,8 @@ function updateGame(){
 function updateHubTimer(){
 	if(!gameData.pause){
 		var nowDate = new Date();
-		for(var ch=0; ch<stage_arr[gameData.stageNum].hub.length; ch++){
-			if(stage_arr[gameData.stageNum].hub[ch].trick == 2 && $hub[ch+'_timer_bar'].visible){
+		for(var ch=0; ch<contentData[gameData.stageNum].hub.length; ch++){
+			if(contentData[gameData.stageNum].hub[ch].trick == 2 && $hub[ch+'_timer_bar'].visible){
 				$hub[ch+'_timer_text'].timerCount = new Date();
 				$hub[ch+'_timer_text'].timerDistance = (nowDate.getTime() - $hub[ch+'_timer_text'].timerStart.getTime());
 				$hub[ch+'_timer_text'].text = millisecondsToTimeGame($hub[ch+'_timer_text'].timerEnd - $hub[ch+'_timer_text'].timerDistance);
@@ -444,19 +446,19 @@ function updateHubTimer(){
  */
 function startMainPower(){
 	//reset stroke
-	for(var al=0;al<stage_arr[gameData.stageNum].lines.length;al++){
+	for(var al=0;al<contentData[gameData.stageNum].lines.length;al++){
 		animateLine($line[al]);
 		$line[al+'command'].style = strokeColour;
 		$line[al].connectCount = 0;
 	}
 	
 	//reset lock
-	for(var ch=0; ch<stage_arr[gameData.stageNum].hub.length; ch++){
+	for(var ch=0; ch<contentData[gameData.stageNum].hub.length; ch++){
 		$hub[ch+'_power'].visible = false;
 		$hub[ch].alpha = 1;
 		
 		for(var hc=0;hc<4;hc++){
-			if(stage_arr[gameData.stageNum].hub[ch].trick == 1 && stage_arr[gameData.stageNum].hub[ch].lock[hc] == 1 && stage_arr[gameData.stageNum].hub[ch].type != 0){
+			if(contentData[gameData.stageNum].hub[ch].trick == 1 && contentData[gameData.stageNum].hub[ch].lock[hc] == 1 && contentData[gameData.stageNum].hub[ch].type != 0){
 				$hub[ch+'_lock_power'+'-'+hc].visible = false;
 				$hub[ch+'_lock_power'].visible = false;
 				$hub[ch+'_lock'].alpha = 1;
@@ -464,27 +466,27 @@ function startMainPower(){
 		}
 	}
 	
-	for(var ch=0; ch<stage_arr[gameData.stageNum].hub.length; ch++){
-		if(stage_arr[gameData.stageNum].hub[ch].type == 0){
-			for(var cl=0; cl<stage_arr[gameData.stageNum].lines.length; cl++){
-				var thisStartHubNum = stage_arr[gameData.stageNum].lines[cl].startHub;
-				var thisEndHubNum = stage_arr[gameData.stageNum].lines[cl].endHub;
+	for(var ch=0; ch<contentData[gameData.stageNum].hub.length; ch++){
+		if(contentData[gameData.stageNum].hub[ch].type == 0){
+			for(var cl=0; cl<contentData[gameData.stageNum].lines.length; cl++){
+				var thisStartHubNum = contentData[gameData.stageNum].lines[cl].startHub;
+				var thisEndHubNum = contentData[gameData.stageNum].lines[cl].endHub;
 		
 				if(thisStartHubNum == ch){
 					powerLine(cl);
 					
 					if($hub[thisEndHubNum].visible){
-						findHubReceive(thisEndHubNum, stage_arr[gameData.stageNum].lines[cl].endHubPos);
+						findHubReceive(thisEndHubNum, contentData[gameData.stageNum].lines[cl].endHubPos);
 					}else{
-						checkPowerUnlock(thisEndHubNum, stage_arr[gameData.stageNum].lines[cl].endHubPos);
+						checkPowerUnlock(thisEndHubNum, contentData[gameData.stageNum].lines[cl].endHubPos);
 					}
 				}else if(thisEndHubNum == ch){
 					powerLine(cl);
 					
 					if($hub[thisStartHubNum].visible){
-						findHubReceive(thisStartHubNum, stage_arr[gameData.stageNum].lines[cl].startHubPos);
+						findHubReceive(thisStartHubNum, contentData[gameData.stageNum].lines[cl].startHubPos);
 					}else{
-						checkPowerUnlock(thisStartHubNum, stage_arr[gameData.stageNum].lines[cl].startHubPos);
+						checkPowerUnlock(thisStartHubNum, contentData[gameData.stageNum].lines[cl].startHubPos);
 					}
 				}
 			}
@@ -508,7 +510,7 @@ function powerLine(num){
  * 
  */
 function findHubReceive(num, position){
-	if(stage_arr[gameData.stageNum].hub[num].lock[position] == 1){
+	if(contentData[gameData.stageNum].hub[num].lock[position] == 1){
 		checkPowerUnlock(num, position);
 	}
 	
@@ -520,8 +522,8 @@ function findHubReceive(num, position){
 			
 			var totalSupply = 0;
 			var totalSupplyPower = 0;
-			for(var ch=0; ch<stage_arr[gameData.stageNum].hub.length; ch++){
-				if(stage_arr[gameData.stageNum].hub[ch].type == 1){
+			for(var ch=0; ch<contentData[gameData.stageNum].hub.length; ch++){
+				if(contentData[gameData.stageNum].hub[ch].type == 1){
 					totalSupply++;
 					if($hub[num+'_power'].visible){
 						totalSupplyPower++;
@@ -641,34 +643,34 @@ function findHubReceive(num, position){
 }
 
 function connectNextHub(num, position){
-	for(var cl=0; cl<stage_arr[gameData.stageNum].lines.length; cl++){
+	for(var cl=0; cl<contentData[gameData.stageNum].lines.length; cl++){
 		if($line[cl].connectCount >= 5){
 			cl++;	
 		}
 		
-		if(stage_arr[gameData.stageNum].lines[cl] != undefined){
-			var thisStartHubNum = stage_arr[gameData.stageNum].lines[cl].startHub;
-			var thisEndHubNum = stage_arr[gameData.stageNum].lines[cl].endHub;
+		if(contentData[gameData.stageNum].lines[cl] != undefined){
+			var thisStartHubNum = contentData[gameData.stageNum].lines[cl].startHub;
+			var thisEndHubNum = contentData[gameData.stageNum].lines[cl].endHub;
 			
-			if(thisStartHubNum == num && stage_arr[gameData.stageNum].lines[cl].startHubPos == position){
+			if(thisStartHubNum == num && contentData[gameData.stageNum].lines[cl].startHubPos == position){
 				$hub[thisStartHubNum+'_power'].visible = true;
 				$hub[thisStartHubNum].alpha = .1;
 				powerLine(cl);
 				
 				if($hub[thisEndHubNum].visible){
-					findHubReceive(thisEndHubNum, stage_arr[gameData.stageNum].lines[cl].endHubPos);
+					findHubReceive(thisEndHubNum, contentData[gameData.stageNum].lines[cl].endHubPos);
 				}else{
-					checkPowerUnlock(thisEndHubNum, stage_arr[gameData.stageNum].lines[cl].endHubPos);
+					checkPowerUnlock(thisEndHubNum, contentData[gameData.stageNum].lines[cl].endHubPos);
 				}
-			}else if(thisEndHubNum == num && stage_arr[gameData.stageNum].lines[cl].endHubPos == position){
+			}else if(thisEndHubNum == num && contentData[gameData.stageNum].lines[cl].endHubPos == position){
 				$hub[thisEndHubNum+'_power'].visible = true;
 				$hub[thisEndHubNum].alpha = .1;
 				powerLine(cl);
 				
 				if($hub[thisStartHubNum].visible){
-					findHubReceive(thisStartHubNum, stage_arr[gameData.stageNum].lines[cl].startHubPos);
+					findHubReceive(thisStartHubNum, contentData[gameData.stageNum].lines[cl].startHubPos);
 				}else{
-					checkPowerUnlock(thisStartHubNum, stage_arr[gameData.stageNum].lines[cl].startHubPos);
+					checkPowerUnlock(thisStartHubNum, contentData[gameData.stageNum].lines[cl].startHubPos);
 				}
 			}
 		}
@@ -682,7 +684,7 @@ function connectNextHub(num, position){
  */
 function checkPowerUnlock(num, position){
 	var hubPosEnable = false;
-	if(stage_arr[gameData.stageNum].hub[num].trick == 1 && stage_arr[gameData.stageNum].hub[num].lock[position] == 1 && stage_arr[gameData.stageNum].hub[num].type != 0){
+	if(contentData[gameData.stageNum].hub[num].trick == 1 && contentData[gameData.stageNum].hub[num].lock[position] == 1 && contentData[gameData.stageNum].hub[num].type != 0){
 		if($hub[num+'_lock'].visible){
 			$hub[num+'_lock_power'+'-'+position].visible = true;
 			hubPosEnable = true;
@@ -693,7 +695,7 @@ function checkPowerUnlock(num, position){
 		var hubPosCount = 0;
 		var hubPosVisCount = 0;
 		for(var hc=0;hc<4;hc++){
-			if(stage_arr[gameData.stageNum].hub[num].trick == 1 && stage_arr[gameData.stageNum].hub[num].lock[hc] == 1 && stage_arr[gameData.stageNum].hub[num].type != 0){
+			if(contentData[gameData.stageNum].hub[num].trick == 1 && contentData[gameData.stageNum].hub[num].lock[hc] == 1 && contentData[gameData.stageNum].hub[num].type != 0){
 				hubPosCount++;
 				if($hub[num+'_lock_power'+'-'+hc].visible){
 					hubPosVisCount++;	
@@ -746,12 +748,12 @@ function animateSupplyUnlock(num){
  */
 function loadStage(con){
 	stageShape.graphics.clear();
-	stageShape.graphics.beginFill('#000').drawRect(0, 0, stage_arr[gameData.stageNum].stage.w, stage_arr[gameData.stageNum].stage.h).endFill();
+	stageShape.graphics.beginFill('#000').drawRect(0, 0, contentData[gameData.stageNum].stage.w, contentData[gameData.stageNum].stage.h).endFill();
 	stageShape.alpha = .1;
 	
 	if(con){
-		stageShape.x = stage_arr[gameData.stageNum].stage.x;
-		stageShape.y = stage_arr[gameData.stageNum].stage.y;
+		stageShape.x = contentData[gameData.stageNum].stage.x;
+		stageShape.y = contentData[gameData.stageNum].stage.y;
 		updateStageMove();
 	}
 	
@@ -767,21 +769,21 @@ function loadStage(con){
  */
 function buildLines(){
 	lineContainer.removeAllChildren();
-	for(var l=0; l<stage_arr[gameData.stageNum].lines.length; l++){
+	for(var l=0; l<contentData[gameData.stageNum].lines.length; l++){
 		$lineContainer[l] = new createjs.Container();
 		$pointContainer[l] = new createjs.Container();
 		lineContainer.addChild($lineContainer[l], $pointContainer[l]);
 		
 		if($.editor.enable){
-			drawPoints(l, stage_arr[gameData.stageNum].lines[l].array);
+			drawPoints(l, contentData[gameData.stageNum].lines[l].array);
 		}
 	}
 }
 
 function drawAllLines(){
-	for(var al=0;al<stage_arr[gameData.stageNum].lines.length;al++){
+	for(var al=0;al<contentData[gameData.stageNum].lines.length;al++){
 		$lineContainer[al].removeAllChildren();
-		drawLine(al, stage_arr[gameData.stageNum].lines[al].startHub, stage_arr[gameData.stageNum].lines[al].startHubPos, stage_arr[gameData.stageNum].lines[al].endHub, stage_arr[gameData.stageNum].lines[al].endHubPos, stage_arr[gameData.stageNum].lines[al].array);
+		drawLine(al, contentData[gameData.stageNum].lines[al].startHub, contentData[gameData.stageNum].lines[al].startHubPos, contentData[gameData.stageNum].lines[al].endHub, contentData[gameData.stageNum].lines[al].endHubPos, contentData[gameData.stageNum].lines[al].array);
 	}
 }
 
@@ -818,19 +820,19 @@ function buildHubs(){
 		editHubContainer.removeAllChildren();		
 	}
 	
-	for(var h=0; h<stage_arr[gameData.stageNum].hub.length; h++){
-		createHub(h, stage_arr[gameData.stageNum].hub[h].x, stage_arr[gameData.stageNum].hub[h].y);
+	for(var h=0; h<contentData[gameData.stageNum].hub.length; h++){
+		createHub(h, contentData[gameData.stageNum].hub[h].x, contentData[gameData.stageNum].hub[h].y);
 		if($.editor.enable){
-			createEditHub(h, stage_arr[gameData.stageNum].hub[h].x, stage_arr[gameData.stageNum].hub[h].y);	
+			createEditHub(h, contentData[gameData.stageNum].hub[h].x, contentData[gameData.stageNum].hub[h].y);	
 		}
 	}
 }
 
 function createHub(num, x, y){
-	var typeNum = stage_arr[gameData.stageNum].hub[num].type;
-	var lockNum = stage_arr[gameData.stageNum].hub[num].lock;
+	var typeNum = contentData[gameData.stageNum].hub[num].type;
+	var lockNum = contentData[gameData.stageNum].hub[num].lock;
 	
-	if(stage_arr[gameData.stageNum].hub[num].trick == 2 && typeNum != 0){
+	if(contentData[gameData.stageNum].hub[num].trick == 2 && typeNum != 0){
 		$hub[num+'_timer'] = hubTimer.clone();
 		$hub[num+'_timer'].x = x;
 		$hub[num+'_timer'].y = y;
@@ -848,7 +850,7 @@ function createHub(num, x, y){
 		$hub[num+'_timer_text'].x = $hub[num+'_timer_bar'].x;
 		$hub[num+'_timer_text'].y = $hub[num+'_timer_bar'].y+7;
 		$hub[num+'_timer_text'].timerStart = 0;
-		$hub[num+'_timer_text'].timerEnd = stage_arr[gameData.stageNum].hub[num].timer;
+		$hub[num+'_timer_text'].timerEnd = contentData[gameData.stageNum].hub[num].timer;
 		$hub[num+'_timer_text'].timerDistance = 0;
 		$hub[num+'_timer_text'].timerCount = 0;
 		
@@ -870,7 +872,7 @@ function createHub(num, x, y){
 	$hub[num].x = x;
 	$hub[num].y = y;
 	$hub[num].num = num;
-	$hub[num].type = stage_arr[gameData.stageNum].hub[num].type;
+	$hub[num].type = contentData[gameData.stageNum].hub[num].type;
 	
 	$hub[num+'_power'] = $hubType['power'+typeNum].clone();
 	$hub[num+'_power'].x = x;
@@ -900,7 +902,7 @@ function createHub(num, x, y){
 		hubContainer.addChild($hub[num+'-'+hc]);
 	}
 	
-	if(stage_arr[gameData.stageNum].hub[num].trick == 1 && stage_arr[gameData.stageNum].hub[num].lock.indexOf(1) >= 0 && typeNum != 0){
+	if(contentData[gameData.stageNum].hub[num].trick == 1 && contentData[gameData.stageNum].hub[num].lock.indexOf(1) >= 0 && typeNum != 0){
 		$hub[num].visible = false;
 		$hub[num+'_lock'] = $hubType['hublock_'+hub_arr[typeNum].lock].clone();	
 		$hub[num+'_lock'].x = $hub[num].x;
@@ -920,7 +922,7 @@ function createHub(num, x, y){
 		
 		var rotation_arr = [0,90,180,270];
 		for(var hc=0;hc<4;hc++){
-			if(stage_arr[gameData.stageNum].hub[num].lock[hc] == 1){
+			if(contentData[gameData.stageNum].hub[num].lock[hc] == 1){
 				$hub[num+'_lock'+'-'+hc] = $hubType['hublock_indicator_'+hub_arr[typeNum].lock].clone();
 				$hub[num+'_lock'+'-'+hc].x = $hub[num].x;
 				$hub[num+'_lock'+'-'+hc].y = $hub[num].y;
@@ -937,10 +939,10 @@ function createHub(num, x, y){
 		}
 	}
 	
-	if(stage_arr[gameData.stageNum].hub[num].rotation == -1){
+	if(contentData[gameData.stageNum].hub[num].rotation == -1){
 		randomizeHub($hub[num]);	
 	}else{
-		$hub[num].rotation = stage_arr[gameData.stageNum].hub[num].rotation;	
+		$hub[num].rotation = contentData[gameData.stageNum].hub[num].rotation;	
 		$hub[num+'_power'].rotation = $hub[num].rotation;
 	}
 	
@@ -987,7 +989,7 @@ function buildHubEvent(obj){
 
 function switchHub(obj){
 	//checkTimer
-	if(stage_arr[gameData.stageNum].hub[obj.num].trick == 2){
+	if(contentData[gameData.stageNum].hub[obj.num].trick == 2){
 		if($hub[obj.num+'_timer_bar'].visible == false){
 			$hub[obj.num+'_timer_bar'].visible = true;
 			$hub[obj.num+'_timer_text'].visible = true;
@@ -1125,7 +1127,7 @@ function buildHubLockEvent(obj){
 function unlockHub(obj){
 	var unlock = true;
 	for(var hc=0;hc<4;hc++){
-		if(stage_arr[gameData.stageNum].hub[obj.num].lock[hc] == 1){
+		if(contentData[gameData.stageNum].hub[obj.num].lock[hc] == 1){
 			if(!$hub[obj.num+'_lock_power'+'-'+hc].visible){
 				unlock = false;	
 			}
@@ -1134,7 +1136,7 @@ function unlockHub(obj){
 	
 	if(unlock){
 		for(var hc=0;hc<4;hc++){
-			if(stage_arr[gameData.stageNum].hub[obj.num].lock[hc] == 1){
+			if(contentData[gameData.stageNum].hub[obj.num].lock[hc] == 1){
 				$hub[obj.num+'_lock_power'+'-'+hc].visible = false;
 				$hub[obj.num+'_lock'+'-'+hc].visible = false;
 			}
@@ -1162,10 +1164,10 @@ function displayMessage(con){
 					stageAnnounceContainer.visible = false;
 					stageContainer.visible = true;
 					
-					gameData.pause = false;
+					gameData.pause = setGameLaunch();
 					startMainPower();
 					
-					if(stage_arr[gameData.stageNum].stage.w > canvasW || stage_arr[gameData.stageNum].stage.h > canvasH){
+					if(contentData[gameData.stageNum].stage.w > canvasW || contentData[gameData.stageNum].stage.h > canvasH){
 						instructionMove.visible = true;	
 					}
 				}});
@@ -1334,6 +1336,7 @@ function shareLinks(action, shareScore){
 	var shareURL = '';
 	if( action == 'facebook' ){
 		if(shareSettings.customScore){
+			gameURL = decodeURIComponent(gameURL);
 			shareURL = `https://www.facebook.com/sharer/sharer.php?u=`+encodeURIComponent(`${gameURL}share.php?title=${shareTitle}&url=${gameURL}&thumb=${gameURL}share.jpg`);
 		}else{
 			shareURL = `https://www.facebook.com/sharer/sharer.php?u=${gameURL}`;

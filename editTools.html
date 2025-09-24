@@ -20,11 +20,19 @@
                 <input id='editArea' name="editArea" type="button" value="Edit Area" />
             	<input id='editHub' name="editHub" type="button" value="Edit Hub" />
                 <input id='editLines' name="editLines" type="button" value="Edit Lines" />
-                <br/><br/>
-                Test play, generate and replace array:<br/>
                 <input id='testPlay' name="testPlay" type="button" value="Test Play" />
-                <input id='generateArray' name="generateArray" type="button" value="Generate Array" />
-                <textarea id="outputArray" name="outputArray" cols="" rows="10"></textarea>
+                <br/><br/>
+                Generate JSON:
+                <div class="formRow">
+                    <label class="button">minified JSON</label>
+                    <select id="minifiedJSON" name="minifiedJSON">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <input id='generateJSON' name="generateJSON" type="button" value="Generate JSON" />
+                <textarea id="outputJSON" name="outputJSON" cols="" rows="10"></textarea>
+                <input id='saveJSON' name="saveJSON" type="button" value="Save JSON" />
         	</div>
             
             <div id="playWrapper">
@@ -189,6 +197,31 @@
             	Click on stage to add new point:<br/><br/>
                 
                 <input id='doneAddPoint' name="doneAddPoint" type="button" value="Done" />
+            </div>
+
+            <div id="saveWrapper">
+                Save JSON File Directly:
+                <div id="saveFeatureLock">
+                    <p>This save feature is available as a bonus. Contact item support to unlock.</p>
+                </div>
+                <div id="saveFeatureUnlock" style="display: none;">
+                    <p>This action will overwrite the current JSON file. Please make a backup of your existing file before saving.</p>
+                    <div class="formRow">
+                        <label class="button">Password:</label>
+                        <input id="savePassword" name="savePassword" class="button" type="password">
+                    </div>
+                    <div class="formRow">
+                        <label class="button">minified JSON</label>
+                        <select id="minified" name="minified">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div id="saveStatus"></div>
+                    <br>
+                    <input id='buttonSaveJSON' name="buttonSaveJSON" type="button" value="Save JSON" />
+                </div>
+                <input id='saveBack' name="levelBack" type="button" value="Done" />
             </div>
             
         </div>

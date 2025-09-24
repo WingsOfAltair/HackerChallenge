@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////
 // EDIT PUZZLES
 ////////////////////////////////////////////////////////////
-var edit = {show:true, option:'', connecting:false, connectStart:'', connectEnd:'', stageX:0, stageY:0};
+var edit = {show:true, option:'', connecting:false, connectStart:'', connectEnd:'', stageX:0, stageY:0, rows:0, columns:0};
 var editColour = '#FF7F00';
 var hubNum = 0;
 var lineNum = 0;
@@ -97,45 +97,58 @@ function buildEditButtons(){
 		stopTestPlay();
 	});
 	
-	$('#generateArray').click(function(){
-		generateArray();
+	//generate
+	$('#generateJSON').click(function(){
+		generateJSON();
+	});
+
+	$('#saveJSON').click(function(){
+		toggleEditOption('save');
+	});
+
+	$('#buttonSaveJSON').click(function(){
+		saveJSON();
+	});
+
+	$('#saveBack').click(function(){
+		toggleEditOption();
 	});
 	
 	
 	//stage
 	$("#stageW").change(function() {
-		stage_arr[gameData.stageNum].stage.w = Number($(this).val());
+		contentData[gameData.stageNum].stage.w = Number($(this).val());
 		reloadStage(false);
 	});
 	
 	$("#stageH").change(function() {
-		stage_arr[gameData.stageNum].stage.h = Number($(this).val());
+		contentData[gameData.stageNum].stage.h = Number($(this).val());
 		reloadStage(false);
 	});
 	
 	$("#startX").change(function() {
-		stage_arr[gameData.stageNum].stage.x = Number($(this).val());
+		contentData[gameData.stageNum].stage.x = Number($(this).val());
 	});
 	
 	$("#startY").change(function() {
-		stage_arr[gameData.stageNum].stage.y = Number($(this).val());
+		contentData[gameData.stageNum].stage.y = Number($(this).val());
 	});
 	
 	$('#loadStartPos').click(function(){
-		stageShape.x = stage_arr[gameData.stageNum].stage.x;
-		stageShape.y = stage_arr[gameData.stageNum].stage.y;
+		stageShape.x = contentData[gameData.stageNum].stage.x;
+		stageShape.y = contentData[gameData.stageNum].stage.y;
 		updateStageMove();
 	});
 	
 	$('#loadCurrentPos').click(function(){
-		stage_arr[gameData.stageNum].stage.x = Math.floor(stageContainer.x);
-		stage_arr[gameData.stageNum].stage.y = Math.floor(stageContainer.y);
+		contentData[gameData.stageNum].stage.x = Math.floor(stageContainer.x);
+		contentData[gameData.stageNum].stage.y = Math.floor(stageContainer.y);
 		
 		$("#startX").val(Math.floor(stageContainer.x));
 		$("#startY").val(Math.floor(stageContainer.y));
 		
-		stageShape.x = stage_arr[gameData.stageNum].stage.x = Math.floor(stageContainer.x);
-		stageShape.y = stage_arr[gameData.stageNum].stage.y = Math.floor(stageContainer.y);
+		stageShape.x = contentData[gameData.stageNum].stage.x = Math.floor(stageContainer.x);
+		stageShape.y = contentData[gameData.stageNum].stage.y = Math.floor(stageContainer.y);
 		updateStageMove();
 	});
 	
@@ -160,55 +173,55 @@ function buildEditButtons(){
 	}
 	
 	$("#hubtype").change(function() {
-		stage_arr[gameData.stageNum].hub[hubNum].type = Number($(this).val());
+		contentData[gameData.stageNum].hub[hubNum].type = Number($(this).val());
 		reloadStage(false);
 		selectHub();
 	});
 	
 	$("#hubtrick").change(function() {
-		stage_arr[gameData.stageNum].hub[hubNum].trick = Number($(this).val());
+		contentData[gameData.stageNum].hub[hubNum].trick = Number($(this).val());
 		
 		$('.hubLockOption').hide();
 		$('.hubTimerOption').hide();
 		
-		if(stage_arr[gameData.stageNum].hub[hubNum].trick == 1){
+		if(contentData[gameData.stageNum].hub[hubNum].trick == 1){
 			$('.hubLockOption').show();
-		}else if(stage_arr[gameData.stageNum].hub[hubNum].trick == 2){
+		}else if(contentData[gameData.stageNum].hub[hubNum].trick == 2){
 			$('.hubTimerOption').show();
-			if(isNaN(stage_arr[gameData.stageNum].hub[hubNum].timer) || stage_arr[gameData.stageNum].hub[hubNum].timer == 0){
-				stage_arr[gameData.stageNum].hub[hubNum].timer = 60000;
-				$('#hubTimer').val(stage_arr[gameData.stageNum].hub[hubNum].timer);
+			if(isNaN(contentData[gameData.stageNum].hub[hubNum].timer) || contentData[gameData.stageNum].hub[hubNum].timer == 0){
+				contentData[gameData.stageNum].hub[hubNum].timer = 60000;
+				$('#hubTimer').val(contentData[gameData.stageNum].hub[hubNum].timer);
 			}
 		}
 	});
 	
 	
 	$("#hubTimer").change(function() {
-		stage_arr[gameData.stageNum].hub[hubNum].timer = Number($(this).val());
+		contentData[gameData.stageNum].hub[hubNum].timer = Number($(this).val());
 	});
 	
 	$("#hubTimer").on("change paste keyup", function() {
-	   stage_arr[gameData.stageNum].hub[hubNum].timer = Number($(this).val());
+	   contentData[gameData.stageNum].hub[hubNum].timer = Number($(this).val());
 	});
 	
 	$("#hublocktop").change(function() {
-		stage_arr[gameData.stageNum].hub[hubNum].lock[0] = Number($(this).val());
+		contentData[gameData.stageNum].hub[hubNum].lock[0] = Number($(this).val());
 	});
 	
 	$("#hublockright").change(function() {
-		stage_arr[gameData.stageNum].hub[hubNum].lock[1] = Number($(this).val());
+		contentData[gameData.stageNum].hub[hubNum].lock[1] = Number($(this).val());
 	});
 	
 	$("#hublockbottom").change(function() {
-		stage_arr[gameData.stageNum].hub[hubNum].lock[2] = Number($(this).val());
+		contentData[gameData.stageNum].hub[hubNum].lock[2] = Number($(this).val());
 	});
 	
 	$("#hublockleft").change(function() {
-		stage_arr[gameData.stageNum].hub[hubNum].lock[3] = Number($(this).val());
+		contentData[gameData.stageNum].hub[hubNum].lock[3] = Number($(this).val());
 	});
 	
 	$("#hubRotation").change(function() {
-		stage_arr[gameData.stageNum].hub[hubNum].rotation = $(this).val();
+		contentData[gameData.stageNum].hub[hubNum].rotation = $(this).val();
 		reloadStage(false);
 		selectHub();
 	});
@@ -280,8 +293,8 @@ function buildEditButtons(){
 		if($(this).val() != ''){
 			pointNum = Number($(this).val());
 			
-			$('#pointX').val(stage_arr[gameData.stageNum].lines[lineNum].array[pointNum].x);
-			$('#pointY').val(stage_arr[gameData.stageNum].lines[lineNum].array[pointNum].y);
+			$('#pointX').val(contentData[gameData.stageNum].lines[lineNum].array[pointNum].x);
+			$('#pointY').val(contentData[gameData.stageNum].lines[lineNum].array[pointNum].y);
 			
 			editPointShape.x = $('#pointX').val();
 			editPointShape.y = $('#pointY').val();
@@ -354,6 +367,7 @@ function toggleShowOption(){
  * 
  */
 var editContainer;
+var editGuideContainer;
 var editHubContainer;
 var editPointShape;
 var editHubSelect;
@@ -368,8 +382,9 @@ function buildEditCanvas(){
 	
 	editContainer = new createjs.Container();
 	editHubContainer = new createjs.Container();
+	editGuideContainer = new createjs.Container();
 	editContainer.addChild(editHubContainer, editPointShape, editHubSelect);
-	stageContainer.addChild(editContainer);
+	stageContainer.addChild(editGuideContainer, editContainer);
 	
 	stageShape.addEventListener("dblclick", function(evt) {
 		edit.stageX = evt.stageX;
@@ -399,14 +414,15 @@ function toggleEditOption(con){
 	$('#editLinesWrapper').hide();
 	$('#editAddLineWrapper').hide();
 	$('#editAddPointWrapper').hide();
+	$('#saveWrapper').hide();
 	
 	if(con == 'stage'){
 		$('#editAreaWrapper').show();
 		
-		$("#stageW").val(stage_arr[gameData.stageNum].stage.w);
-		$("#stageH").val(stage_arr[gameData.stageNum].stage.h);
-		$("#stageX").val(stage_arr[gameData.stageNum].stage.x);
-		$("#stageY").val(stage_arr[gameData.stageNum].stage.y);
+		$("#stageW").val(contentData[gameData.stageNum].stage.w);
+		$("#stageH").val(contentData[gameData.stageNum].stage.h);
+		$("#stageX").val(contentData[gameData.stageNum].stage.x);
+		$("#stageY").val(contentData[gameData.stageNum].stage.y);
 		
 	}else if(con == 'hub'){
 		$('#editHubWrapper').show();
@@ -431,6 +447,9 @@ function toggleEditOption(con){
 		$('#editAddPointWrapper').show();
 	}else if(con == 'play'){
 		$('#playWrapper').show();
+	}else if(con == 'save'){
+		$('#saveWrapper').show();
+		checkSaveFeature();
 	}else{
 		$('#actionWrapper').show();
 	}
@@ -445,10 +464,10 @@ function toggleEditOption(con){
 function toggleStage(con){
 	if(con){
 		gameData.stageNum++;
-		gameData.stageNum = gameData.stageNum > stage_arr.length - 1 ? 0 : gameData.stageNum;
+		gameData.stageNum = gameData.stageNum > contentData.length - 1 ? 0 : gameData.stageNum;
 	}else{
 		gameData.stageNum--;
-		gameData.stageNum = gameData.stageNum < 0 ? stage_arr.length - 1 : gameData.stageNum;
+		gameData.stageNum = gameData.stageNum < 0 ? contentData.length - 1 : gameData.stageNum;
 	}
 	
 	$('#challengelist').prop("selectedIndex", gameData.stageNum);
@@ -458,62 +477,68 @@ function toggleStage(con){
 
 /*!
  * 
- * GENERATE ARRAY - This is the function that runs to generate array
+ * GENERATE JSON - This is the function that runs to generate json
  * 
  */
+function generateJSON(){
+	const minified = document.getElementById("minifiedJSON");
+    const minifiedValue = minified.value;
+	var outputJSON = minifiedValue == 'yes' ? JSON.stringify(contentData) : JSON.stringify(contentData, null, 2);
+	$('#outputJSON').val(outputJSON);	
+}
 
-function generateArray(){
-	var outputArray = '';
-	var space = '					';
-	var space2 = '						';
-	var space3 = '							';
-	
-	outputArray += "[";
-	for(var e=0;e<stage_arr.length;e++){
-		if(e==0){
-			outputArray += "{stage:{w:"+stage_arr[e].stage.w+", h:"+stage_arr[e].stage.h +", x:"+stage_arr[e].stage.x+", y:"+stage_arr[e].stage.y+"},\n";
-		}else{
-			outputArray += space+"{stage:{w:"+stage_arr[e].stage.w+", h:"+stage_arr[e].stage.h +", x:"+stage_arr[e].stage.x+", y:"+stage_arr[e].stage.y+"},\n";
-		}
-		
-		outputArray += space+"hub:[";
-		
-		for(var eb=0;eb<stage_arr[e].hub.length;eb++){
-			if(stage_arr[e].hub.length==0){
-				outputArray += "{x:"+stage_arr[e].hub[eb].x+", y:"+stage_arr[e].hub[eb].y+", type:"+stage_arr[e].hub[eb].type+", lock:["+stage_arr[e].hub[eb].lock[0]+","+stage_arr[e].hub[eb].lock[1]+","+stage_arr[e].hub[eb].lock[2]+","+stage_arr[e].hub[eb].lock[3]+"], timer:"+stage_arr[e].hub[eb].timer+", trick:"+stage_arr[e].hub[eb].trick+", rotation:"+stage_arr[e].hub[eb].rotation+"},";
-			}else if(eb==stage_arr[e].hub.length-1){
-				outputArray += "{x:"+stage_arr[e].hub[eb].x+", y:"+stage_arr[e].hub[eb].y+", type:"+stage_arr[e].hub[eb].type+", lock:["+stage_arr[e].hub[eb].lock[0]+","+stage_arr[e].hub[eb].lock[1]+","+stage_arr[e].hub[eb].lock[2]+","+stage_arr[e].hub[eb].lock[3]+"], timer:"+stage_arr[e].hub[eb].timer+", trick:"+stage_arr[e].hub[eb].trick+", rotation:"+stage_arr[e].hub[eb].rotation+"}";
-			}else{
-				outputArray += "{x:"+stage_arr[e].hub[eb].x+", y:"+stage_arr[e].hub[eb].y+", type:"+stage_arr[e].hub[eb].type+", lock:["+stage_arr[e].hub[eb].lock[0]+","+stage_arr[e].hub[eb].lock[1]+","+stage_arr[e].hub[eb].lock[2]+","+stage_arr[e].hub[eb].lock[3]+"], timer:"+stage_arr[e].hub[eb].timer+", trick:"+stage_arr[e].hub[eb].trick+", rotation:"+stage_arr[e].hub[eb].rotation+"},";	
-			}
-		}
-		outputArray += "],\n";
-		
-		outputArray += space + "lines:[";
-		for(var eb=0;eb<stage_arr[e].lines.length;eb++){
-			var array = '';
-			for(var ec=0;ec<stage_arr[e].lines[eb].array.length;ec++){
-				if(eb==stage_arr[e].lines[eb].array.length-1){
-					array += "{x:"+stage_arr[e].lines[eb].array[ec].x+", y:"+stage_arr[e].lines[eb].array[ec].y+"},";
-				}else{
-					array += "{x:"+stage_arr[e].lines[eb].array[ec].x+", y:"+stage_arr[e].lines[eb].array[ec].y+"},";
-				}
-			}
+function checkSaveFeature(){
+	$('#saveStatus').html("");
+	$('#savePassword').val("");
+
+	var saveFeatureUnlock = document.getElementById("saveFeatureUnlock");
+	if (window.getComputedStyle(saveFeatureUnlock).display === "none") {
+		$.ajax({
+			url: "save.php",
+			type: "HEAD",
+			success: function() {
+				$('#saveFeatureLock').hide();
+				$('#saveFeatureUnlock').show(); 
+			},
+			error: function() {
 			
-			if(eb==0){
-				outputArray += "{startHub:"+stage_arr[e].lines[eb].startHub+", startHubPos:"+stage_arr[e].lines[eb].startHubPos+", endHub:"+stage_arr[e].lines[eb].endHub+", endHubPos:"+stage_arr[e].lines[eb].endHubPos+", array:["+array+"]},\n";
-			}else if(eb==stage_arr[e].lines.length-1){
-				outputArray += space3+"{startHub:"+stage_arr[e].lines[eb].startHub+", startHubPos:"+stage_arr[e].lines[eb].startHubPos+", endHub:"+stage_arr[e].lines[eb].endHub+", endHubPos:"+stage_arr[e].lines[eb].endHubPos+", array:["+array+"]}\n";
-			}else{
-				outputArray += space3+"{startHub:"+stage_arr[e].lines[eb].startHub+", startHubPos:"+stage_arr[e].lines[eb].startHubPos+", endHub:"+stage_arr[e].lines[eb].endHub+", endHubPos:"+stage_arr[e].lines[eb].endHubPos+", array:["+array+"]},\n";
 			}
-		}
-		outputArray += "],\n";
-		
-		outputArray += space+"},\n\n";
+		});
 	}
-	outputArray += space+']\n\n';
-	$('#outputArray').val(outputArray);
+}
+
+function saveJSON(){
+	var pass = $('#savePassword').val().trim();
+    if (!pass) {
+        $('#saveStatus').html("Please enter password");
+        return;
+    }
+	
+	const minified = document.getElementById("minified");
+    const minifiedValue = minified.value;
+	var jsonStr = minifiedValue == 'yes' ? JSON.stringify(contentData) : JSON.stringify(contentData, null, 2);
+
+	$.ajax({
+        type: "POST",
+        url: "save.php",
+        data: { password: pass, data: jsonStr }
+    }).done(function(o) {
+        let data;
+        try {
+            data = JSON.parse(o);
+        } catch(e) {
+			$('#saveStatus').html("Error: invalid server response!");
+            return;
+        }
+
+        if (data.status === true) {
+            $('#saveStatus').html("File saved successfully!");
+            $('#savePassword').val("");
+        } else {
+            var errorMsg = data.error || "Wrong password, file cannot save!";
+			$('#saveStatus').html(errorMsg);
+        }
+    });
 }
 
 function checkUndefined(num){
@@ -532,25 +557,25 @@ function checkUndefined(num){
 function actionStage(con){
 	switch(con){
 		case 'new':
-			stage_arr.push({stage:{w:canvasW, h:canvasH, x:0, y:0}, hub:[], lines:[]});
-			gameData.stageNum = stage_arr.length-1;
+			contentData.push({stage:{w:canvasW, h:canvasH, x:0, y:0}, hub:[], lines:[]});
+			gameData.stageNum = contentData.length-1;
 		break;
 		
 		case 'remove':
-			stage_arr.splice(gameData.stageNum, 1);
+			contentData.splice(gameData.stageNum, 1);
 			gameData.stageNum = 0;
 		break;
 			
 		case 'moveup':
 			if(gameData.stageNum-1 >= 0){
-				swapArray(stage_arr, gameData.stageNum-1, gameData.stageNum);
+				swapArray(contentData, gameData.stageNum-1, gameData.stageNum);
 				gameData.stageNum--;
 			}
 		break;
 		
 		case 'movedown':
-			if(gameData.stageNum+1 < stage_arr.length){
-				swapArray(stage_arr, gameData.stageNum+1, gameData.stageNum);
+			if(gameData.stageNum+1 < contentData.length){
+				swapArray(contentData, gameData.stageNum+1, gameData.stageNum);
 				gameData.stageNum++;
 			}
 		break;
@@ -571,7 +596,7 @@ function actionStage(con){
 
 function buildStageDD(){
 	$('#challengelist').empty();
-	for(var n=0;n<stage_arr.length;n++){
+	for(var n=0;n<contentData.length;n++){
 		$('#challengelist').append($("<option/>", {
 			value: n,
 			text: 'Stage '+(n+1)
@@ -589,10 +614,10 @@ function buildStageDD(){
 function toggleHub(con){
 	if(con){
 		hubNum++;
-		hubNum = hubNum > stage_arr[gameData.stageNum].hub.length - 1 ? 0 : hubNum;
+		hubNum = hubNum > contentData[gameData.stageNum].hub.length - 1 ? 0 : hubNum;
 	}else{
 		hubNum--;
-		hubNum = hubNum < 0 ? stage_arr[gameData.stageNum].hub.length - 1 : hubNum;
+		hubNum = hubNum < 0 ? contentData[gameData.stageNum].hub.length - 1 : hubNum;
 	}
 	
 	$('#hublist').prop("selectedIndex", hubNum);
@@ -609,8 +634,8 @@ function toggleHub(con){
 function actionHub(con){
 	switch(con){
 		case 'new':
-			stage_arr[gameData.stageNum].hub.push({x:Math.round(edit.stageX - stageContainer.x), y:Math.round(edit.stageY - stageContainer.y), type:0, lock:[0,0,0,0], timer:0, trick:0, rotation:-1});
-			hubNum = stage_arr[gameData.stageNum].hub.length-1;
+			contentData[gameData.stageNum].hub.push({x:Math.round(edit.stageX - stageContainer.x), y:Math.round(edit.stageY - stageContainer.y), type:0, lock:[0,0,0,0], timer:0, trick:0, rotation:-1});
+			hubNum = contentData[gameData.stageNum].hub.length-1;
 			
 			buildHubDD();
 			buildHubs();
@@ -618,7 +643,7 @@ function actionHub(con){
 		break;
 		
 		case 'remove':
-			stage_arr[gameData.stageNum].hub.splice(hubNum, 1);
+			contentData[gameData.stageNum].hub.splice(hubNum, 1);
 			hubNum = 0;
 			editHubSelect.visible = false;
 			
@@ -636,7 +661,7 @@ function actionHub(con){
 
 function buildHubDD(){
 	$('#hublist').empty();
-	for(var n=0;n<stage_arr[gameData.stageNum].hub.length;n++){
+	for(var n=0;n<contentData[gameData.stageNum].hub.length;n++){
 		$('#hublist').append($("<option/>", {
 			value: n,
 			text: 'Hub '+(n+1)
@@ -654,10 +679,10 @@ function buildHubDD(){
 function toggleLine(con){
 	if(con){
 		lineNum++;
-		lineNum = lineNum > stage_arr[gameData.stageNum].lines.length - 1 ? 0 : lineNum;
+		lineNum = lineNum > contentData[gameData.stageNum].lines.length - 1 ? 0 : lineNum;
 	}else{
 		lineNum--;
-		lineNum = lineNum < 0 ? stage_arr[gameData.stageNum].lines.length - 1 : lineNum;
+		lineNum = lineNum < 0 ? contentData[gameData.stageNum].lines.length - 1 : lineNum;
 	}
 	
 	$('#linelist').prop("selectedIndex", lineNum);
@@ -685,9 +710,9 @@ function actionLine(con){
 		
 		case 'new':
 			edit.connecting = false;
-			stage_arr[gameData.stageNum].lines.push({startHub:edit.connectStart.num, startHubPos:edit.connectStart.pos, endHub:edit.connectEnd.num, endHubPos:edit.connectEnd.pos, array:[]});
+			contentData[gameData.stageNum].lines.push({startHub:edit.connectStart.num, startHubPos:edit.connectStart.pos, endHub:edit.connectEnd.num, endHubPos:edit.connectEnd.pos, array:[]});
 			
-			lineNum = stage_arr[gameData.stageNum].lines.length-1;
+			lineNum = contentData[gameData.stageNum].lines.length-1;
 			$('#linelist').prop("selectedIndex", lineNum);
 			
 			buildLinesDD();
@@ -701,7 +726,7 @@ function actionLine(con){
 		break;
 		
 		case 'remove':
-			stage_arr[gameData.stageNum].lines.splice(lineNum, 1);
+			contentData[gameData.stageNum].lines.splice(lineNum, 1);
 			lineNum = 0;
 			
 			buildLinesDD();
@@ -717,7 +742,7 @@ function actionLine(con){
 
 function buildLinesDD(){
 	$('#linelist').empty();
-	for(var n=0;n<stage_arr[gameData.stageNum].lines.length;n++){
+	for(var n=0;n<contentData[gameData.stageNum].lines.length;n++){
 		$('#linelist').append($("<option/>", {
 			value: n,
 			text: 'Lines '+(n+1)
@@ -733,15 +758,15 @@ function buildLinesDD(){
 function togglePoint(con){
 	if(con){
 		pointNum++;
-		pointNum = pointNum > stage_arr[gameData.stageNum].lines[lineNum].array.length - 1 ? 0 : pointNum;
+		pointNum = pointNum > contentData[gameData.stageNum].lines[lineNum].array.length - 1 ? 0 : pointNum;
 	}else{
 		pointNum--;
-		pointNum = pointNum < 0 ? stage_arr[gameData.stageNum].lines[lineNum].array.length - 1 : pointNum;
+		pointNum = pointNum < 0 ? contentData[gameData.stageNum].lines[lineNum].array.length - 1 : pointNum;
 	}
 	
 	$('#pointlist').prop("selectedIndex", pointNum);
-	$('#pointX').val(stage_arr[gameData.stageNum].lines[lineNum].array[pointNum].x);
-	$('#pointY').val(stage_arr[gameData.stageNum].lines[lineNum].array[pointNum].y);
+	$('#pointX').val(contentData[gameData.stageNum].lines[lineNum].array[pointNum].x);
+	$('#pointY').val(contentData[gameData.stageNum].lines[lineNum].array[pointNum].y);
 	
 	editPointShape.x = $('#pointX').val();
 	editPointShape.y = $('#pointY').val();
@@ -756,9 +781,9 @@ function togglePoint(con){
 function actionPoint(con){
 	switch(con){
 		case 'new':
-			stage_arr[gameData.stageNum].lines[lineNum].array.push({x:Math.round(edit.stageX - stageContainer.x), y:Math.round(edit.stageY - stageContainer.y)});
+			contentData[gameData.stageNum].lines[lineNum].array.push({x:Math.round(edit.stageX - stageContainer.x), y:Math.round(edit.stageY - stageContainer.y)});
 			
-			pointNum = stage_arr[gameData.stageNum].lines[lineNum].array.length-1;
+			pointNum = contentData[gameData.stageNum].lines[lineNum].array.length-1;
 			buildPointsDD();
 			buildLines();
 			drawAllLines();
@@ -771,7 +796,7 @@ function actionPoint(con){
 		break;
 		
 		case 'remove':
-			stage_arr[gameData.stageNum].lines[lineNum].array.splice(pointNum, 1);
+			contentData[gameData.stageNum].lines[lineNum].array.splice(pointNum, 1);
 			pointNum = 0;
 			
 			buildPointsDD();
@@ -788,16 +813,16 @@ function buildPointsDD(){
 	$('#pointY').val('');
 	
 	$('#pointlist').empty();
-	if(stage_arr[gameData.stageNum].lines.length > 0){
-		for(var n=0;n<stage_arr[gameData.stageNum].lines[lineNum].array.length;n++){
+	if(contentData[gameData.stageNum].lines.length > 0){
+		for(var n=0;n<contentData[gameData.stageNum].lines[lineNum].array.length;n++){
 			$('#pointlist').append($("<option/>", {
 				value: n,
 				text: 'Point '+(n+1)
 			}));
 			
 			if(n==0){
-				$('#pointX').val(stage_arr[gameData.stageNum].lines[lineNum].array[n].x);
-				$('#pointY').val(stage_arr[gameData.stageNum].lines[lineNum].array[n].y);
+				$('#pointX').val(contentData[gameData.stageNum].lines[lineNum].array[n].x);
+				$('#pointY').val(contentData[gameData.stageNum].lines[lineNum].array[n].y);
 			}
 		}
 		$('#pointlist').prop("selectedIndex", pointNum);
@@ -810,7 +835,7 @@ function buildPointsDD(){
  * 
  */
 function selectHub(){
-	if(stage_arr[gameData.stageNum].hub.length == 0){
+	if(contentData[gameData.stageNum].hub.length == 0){
 		$('.huboption').hide();
 		$('.hubTimerOption').hide();
 		$('.hubLockOption').hide();
@@ -818,41 +843,41 @@ function selectHub(){
 		return;	
 	}
 	
-	$('#hubX').val(stage_arr[gameData.stageNum].hub[hubNum].x);
-	$('#hubY').val(stage_arr[gameData.stageNum].hub[hubNum].y);
-	$('#hubtype').prop("selectedIndex", stage_arr[gameData.stageNum].hub[hubNum].type);
-	$('#hubtrick').prop("selectedIndex", stage_arr[gameData.stageNum].hub[hubNum].trick);
+	$('#hubX').val(contentData[gameData.stageNum].hub[hubNum].x);
+	$('#hubY').val(contentData[gameData.stageNum].hub[hubNum].y);
+	$('#hubtype').prop("selectedIndex", contentData[gameData.stageNum].hub[hubNum].type);
+	$('#hubtrick').prop("selectedIndex", contentData[gameData.stageNum].hub[hubNum].trick);
 	
 	$('.huboption').show();
 	$('.hubTimerOption').hide();
 	$('.hubLockOption').hide();
 	$("#hubtrick option[value=" + 2 + "]").removeAttr('disabled');
 	
-	if(stage_arr[gameData.stageNum].hub[hubNum].type == 0){
+	if(contentData[gameData.stageNum].hub[hubNum].type == 0){
 		$('.huboption').hide();
-	}else if(stage_arr[gameData.stageNum].hub[hubNum].type == 1){
+	}else if(contentData[gameData.stageNum].hub[hubNum].type == 1){
 		$("#hubtrick option[value=" + 2 + "]").attr('disabled','disabled');
 	}
 	
-	if(stage_arr[gameData.stageNum].hub[hubNum].trick == 1){
+	if(contentData[gameData.stageNum].hub[hubNum].trick == 1){
 		$('.hubLockOption').show();
-	}else if(stage_arr[gameData.stageNum].hub[hubNum].trick == 2){
+	}else if(contentData[gameData.stageNum].hub[hubNum].trick == 2){
 		$('.hubTimerOption').show();
 	}
 	
-	$('#hubTimer').val(stage_arr[gameData.stageNum].hub[hubNum].timer);
-	$('#hublocktop').prop("selectedIndex", stage_arr[gameData.stageNum].hub[hubNum].lock[0]);
-	$('#hublockright').prop("selectedIndex", stage_arr[gameData.stageNum].hub[hubNum].lock[1]);
-	$('#hublockbottom').prop("selectedIndex", stage_arr[gameData.stageNum].hub[hubNum].lock[2]);
-	$('#hublockleft').prop("selectedIndex", stage_arr[gameData.stageNum].hub[hubNum].lock[3]);
+	$('#hubTimer').val(contentData[gameData.stageNum].hub[hubNum].timer);
+	$('#hublocktop').prop("selectedIndex", contentData[gameData.stageNum].hub[hubNum].lock[0]);
+	$('#hublockright').prop("selectedIndex", contentData[gameData.stageNum].hub[hubNum].lock[1]);
+	$('#hublockbottom').prop("selectedIndex", contentData[gameData.stageNum].hub[hubNum].lock[2]);
+	$('#hublockleft').prop("selectedIndex", contentData[gameData.stageNum].hub[hubNum].lock[3]);
 	
 	var rotation_arr = [];
 	
-	if(stage_arr[gameData.stageNum].hub[hubNum].type == 2){
+	if(contentData[gameData.stageNum].hub[hubNum].type == 2){
 		rotation_arr = [-1,0,90];	
-	}else if(stage_arr[gameData.stageNum].hub[hubNum].type == 3){
+	}else if(contentData[gameData.stageNum].hub[hubNum].type == 3){
 		rotation_arr = [-1,0,90,180,270];	
-	}else if(stage_arr[gameData.stageNum].hub[hubNum].type == 5){
+	}else if(contentData[gameData.stageNum].hub[hubNum].type == 5){
 		rotation_arr = [-1,0,90,180,270];	
 	}
 	
@@ -871,7 +896,7 @@ function selectHub(){
 		
 		$("#hubRotation").prop('disabled', false);
 	}	
-	$('#hubRotation').val(stage_arr[gameData.stageNum].hub[hubNum].rotation);
+	$('#hubRotation').val(contentData[gameData.stageNum].hub[hubNum].rotation);
 	
 	$('#hublist').prop("selectedIndex", hubNum);
 	
@@ -888,7 +913,7 @@ function selectHub(){
 function selectLine(){
 	$('#linelist').prop("selectedIndex", lineNum);
 	
-	for(var al=0;al<stage_arr[gameData.stageNum].lines.length;al++){
+	for(var al=0;al<contentData[gameData.stageNum].lines.length;al++){
 		$line[al+'command'].style = strokeColour;
 	}
 	
@@ -937,6 +962,7 @@ function toggleDragEvent(obj, con){
 			case 'move':
 				obj.target.x = (obj.stageX) + obj.target.offset.x;
 				obj.target.y = (obj.stageY) + obj.target.offset.y;
+				snapPosition(obj.target);
 				
 				if(obj.target.type == 'hub'){
 					moveHubDots(obj.target.num);
@@ -956,6 +982,20 @@ function toggleDragEvent(obj, con){
 			case 'release':
 				obj.target.dragging = false;
 			break;
+		}
+	}
+}
+
+function snapPosition(target){
+	var range = 10;
+	for(let r=0; r<edit.rows; r++){
+		for(let c=0; c<edit.columns; c++){
+			if (Math.abs(target.x - $point['guide'+r+'_'+c].x) <= range) {
+				target.x = $point['guide'+r+'_'+c].x;
+			}
+			if (Math.abs(target.y - $point['guide'+r+'_'+c].y) <= range) {
+				target.y = $point['guide'+r+'_'+c].y;
+			}
 		}
 	}
 }
@@ -996,7 +1036,7 @@ function moveHubDots(num){
 	$hub[num].x = $hub[num+'_edit'].x;
 	$hub[num].y = $hub[num+'_edit'].y;
 	
-	var typeNum = stage_arr[gameData.stageNum].hub[num].type;
+	var typeNum = contentData[gameData.stageNum].hub[num].type;
 	var range = Number(hub_arr[typeNum].range);
 	var pos_arr = [{x:0, y:-(range)},
 				   {x:range, y:0},
@@ -1017,7 +1057,7 @@ function moveHubDots(num){
  * 
  */
 function createEditHub(num, x, y){
-	var typeNum = stage_arr[gameData.stageNum].hub[num].type;
+	var typeNum = contentData[gameData.stageNum].hub[num].type;
 	$hub[num+'_edit'] = $hubType[typeNum].clone(); 
 	$hub[num+'_edit'].x = x;
 	$hub[num+'_edit'].y = y;
@@ -1026,8 +1066,8 @@ function createEditHub(num, x, y){
 	
 	editHubContainer.addChild($hub[num+'_edit']);
 	
-	if(stage_arr[gameData.stageNum].hub[num].rotation != -1 && typeNum != 0 && typeNum != 1){
-		$hub[num+'_edit'].rotation = stage_arr[gameData.stageNum].hub[num].rotation;
+	if(contentData[gameData.stageNum].hub[num].rotation != -1 && typeNum != 0 && typeNum != 1){
+		$hub[num+'_edit'].rotation = contentData[gameData.stageNum].hub[num].rotation;
 	}
 	
 	buildDragAndDrop($hub[num+'_edit']);
@@ -1083,9 +1123,9 @@ function drawPoints(num, array){
 function updateArray(obj){
 	switch(obj.type){
 		case 'hub':
-			if(stage_arr[gameData.stageNum].hub.length > 0){
-				stage_arr[gameData.stageNum].hub[obj.num].x = Math.floor(obj.x);
-				stage_arr[gameData.stageNum].hub[obj.num].y = Math.floor(obj.y);
+			if(contentData[gameData.stageNum].hub.length > 0){
+				contentData[gameData.stageNum].hub[obj.num].x = Math.floor(obj.x);
+				contentData[gameData.stageNum].hub[obj.num].y = Math.floor(obj.y);
 				
 				$('#hubX').val(Math.floor(obj.x));
 				$('#hubY').val(Math.floor(obj.y));
@@ -1093,9 +1133,9 @@ function updateArray(obj){
 		break;
 		
 		case 'point':
-			if(stage_arr[gameData.stageNum].lines[obj.targetLineNum].array.length > 0){
-				stage_arr[gameData.stageNum].lines[obj.targetLineNum].array[obj.num].x = Math.floor(obj.x);
-				stage_arr[gameData.stageNum].lines[obj.targetLineNum].array[obj.num].y = Math.floor(obj.y);
+			if(contentData[gameData.stageNum].lines[obj.targetLineNum].array.length > 0){
+				contentData[gameData.stageNum].lines[obj.targetLineNum].array[obj.num].x = Math.floor(obj.x);
+				contentData[gameData.stageNum].lines[obj.targetLineNum].array[obj.num].y = Math.floor(obj.y);
 				
 				$('#pointX').val(Math.floor(obj.x));
 				$('#pointY').val(Math.floor(obj.y));
@@ -1111,10 +1151,10 @@ function updateArray(obj){
  */
 function checkHubAvailable(obj, con){
 	var availableHub = true;
-	for(var l=0; l<stage_arr[gameData.stageNum].lines.length; l++){
-		if(stage_arr[gameData.stageNum].lines[l].startHub == obj.num && stage_arr[gameData.stageNum].lines[l].startHubPos == obj.pos){
+	for(var l=0; l<contentData[gameData.stageNum].lines.length; l++){
+		if(contentData[gameData.stageNum].lines[l].startHub == obj.num && contentData[gameData.stageNum].lines[l].startHubPos == obj.pos){
 			availableHub = false;	
-		}else if(stage_arr[gameData.stageNum].lines[l].endHub == obj.num && stage_arr[gameData.stageNum].lines[l].endHubPos == obj.pos){
+		}else if(contentData[gameData.stageNum].lines[l].endHub == obj.num && contentData[gameData.stageNum].lines[l].endHubPos == obj.pos){
 			availableHub = false;	
 		}
 	}
@@ -1133,14 +1173,15 @@ function testPlay(){
 	loadStage();
 	
 	editHubSelect.visible = false;
+	editGuideContainer.visible = false;
 	
-	for(var l=0; l<stage_arr[gameData.stageNum].lines.length; l++){
-		for(var p=0;p<stage_arr[gameData.stageNum].lines[l].array.length;p++){
+	for(var l=0; l<contentData[gameData.stageNum].lines.length; l++){
+		for(var p=0;p<contentData[gameData.stageNum].lines[l].array.length;p++){
 			$point[l+'-p'+p].visible = false;
 		}
 	}
 	
-	for(var al=0;al<stage_arr[gameData.stageNum].lines.length;al++){
+	for(var al=0;al<contentData[gameData.stageNum].lines.length;al++){
 		$line[al+'command'].style = strokeColour;
 	}
 	
@@ -1154,17 +1195,18 @@ function testPlay(){
 
 function stopTestPlay(){
 	hubContainer.visible = false;
+	editGuideContainer.visible = true;
 	stopGame();
 	editHubContainer.removeAllChildren();
 	loadStage();
 	
-	for(var l=0; l<stage_arr[gameData.stageNum].lines.length; l++){
-		for(var p=0;p<stage_arr[gameData.stageNum].lines[l].array.length;p++){
+	for(var l=0; l<contentData[gameData.stageNum].lines.length; l++){
+		for(var p=0;p<contentData[gameData.stageNum].lines[l].array.length;p++){
 			$point[l+'-p'+p].visible = true;
 		}
 	}
 	
-	for(var al=0;al<stage_arr[gameData.stageNum].lines.length;al++){
+	for(var al=0;al<contentData[gameData.stageNum].lines.length;al++){
 		$line[al+'command'].style = strokeColour;
 	}
 	
@@ -1181,7 +1223,28 @@ function reloadStage(con){
 	editHubSelect.visible = false;
 	editPointShape.visible = false;
 	
-	editHubContainer.removeAllChildren();	
+	editHubContainer.removeAllChildren();
+	editGuideContainer.removeAllChildren();
+
+	var range = 30;
+	edit.columns = Math.round((contentData[gameData.stageNum].stage.w + range)/range);
+	edit.rows = Math.round((contentData[gameData.stageNum].stage.h + range)/range);
+	var posData = {x:0, y:0, spaceX:range, spaceY:range};
+	for(let r=0; r<edit.rows; r++){
+		for(let c=0; c<edit.columns; c++){
+			$point['guide'+r+'_'+c] = new createjs.Shape();
+			$point['guide'+r+'_'+c].graphics.beginFill('#fff').drawCircle(0,0,3);
+			$point['guide'+r+'_'+c].alpha = .2;
+			$point['guide'+r+'_'+c].x = posData.x;
+			$point['guide'+r+'_'+c].y = posData.y;
+			editGuideContainer.addChild($point['guide'+r+'_'+c]);
+
+			posData.x += posData.spaceX;
+		}
+		posData.x = 0;
+		posData.y += posData.spaceY;
+	}
+
 	loadStage(con);
 }
 
