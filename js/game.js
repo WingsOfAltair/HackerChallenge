@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////
-// GAME v2.2
+// GAME v2.3
 ////////////////////////////////////////////////////////////
 
 /*!
@@ -56,7 +56,7 @@ const dotW = 5;
 const dotColour = '#ffffff';
 const gameData = {stageNum:0, displayStageNum:0, pause:true, soundtimer_arr:[], soundtimercount:0};
 const build_id = 0xA9C94;
-const cerify_key = 'AZRbAcwKAJG6mesb_XRSlxpfGL8';
+const cerify_key = 'AeMNbM0KAJphXx-Sw7ZpionD1fQ';
 
 /*!
  * 

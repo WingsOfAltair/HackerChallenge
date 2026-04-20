@@ -79,7 +79,8 @@ function checkBrowser(){
 	if(browserSupport && checkGameVersion()){
 		if(!isLoaded){
 			isLoaded=true;
-			initPreload();
+			
+			loadAddons();
 		}
 	}else{
 		//browser not support
